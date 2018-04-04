@@ -1,0 +1,9 @@
+applications:
+- name: cfMiauw
+  instances: 1
+  memory: 16M
+  disk_quota: 16M
+  stack: cflinuxfs2
+  buildpack: go_buildpack
+  env:
+    GOPACKAGENAME: cfMiauw

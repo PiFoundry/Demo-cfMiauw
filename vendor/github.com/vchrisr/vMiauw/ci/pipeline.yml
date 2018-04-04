@@ -1,0 +1,31 @@
+resources:
+- name: vMiauw
+  type: git
+  source:
+    uri: https://github.com/vChrisR/vMiauw.git
+- name: cf-deploy-vMiauw
+  type: cf
+  source:
+    api: ((cf-api))
+    username: ((cf-username))
+    password: ((cf-password))
+    organization: ((cf-organization))
+    space: ((cf-space))
+    skip_cert_check: true
+
+jobs:
+- name: unit-tests
+  plan:
+  - get: vMiauw
+    trigger: true
+  - task: unit-test
+    file: vMiauw/ci/unittests.yml
+- name: cf-push
+  plan:
+  - get: vMiauw
+    trigger: true
+    passed: [ unit-tests ]
+  - put: cf-deploy-vMiauw
+    params:
+      manifest: vMiauw/manifest.yml
+      path: vMiauw
