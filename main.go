@@ -8,8 +8,6 @@ import (
 	"os"
 	"strings"
 
-	"github.com/vchrisr/vMiauw/config"
-
 	"github.com/gorilla/mux"
 )
 
@@ -55,7 +53,7 @@ func main() {
 	router := mux.NewRouter()
 	router.HandleFunc("/", vMiauw)
 	http.Handle("/", router)
-	err := http.ListenAndServe(":"+config.GetPort(), nil)
+	err := http.ListenAndServe(fmt.Sprintf(":%s", os.Getenv("PORT")), nil)
 	if err != nil {
 		fmt.Println(err)
 	}

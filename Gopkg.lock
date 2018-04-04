@@ -2,12 +2,6 @@
 
 
 [[projects]]
-  name = "github.com/cloudfoundry-community/go-cfenv"
-  packages = ["."]
-  revision = "f920e9562d5f951cbf11785728f67258c38a10d0"
-  version = "v1.17.0"
-
-[[projects]]
   name = "github.com/gorilla/context"
   packages = ["."]
   revision = "1ea25387ff6f684839d82767c1733ff4d4d15d0a"
@@ -19,21 +13,9 @@
   revision = "53c1911da2b537f792e7cafcb446b05ffe33b996"
   version = "v1.6.1"
 
-[[projects]]
-  branch = "master"
-  name = "github.com/mitchellh/mapstructure"
-  packages = ["."]
-  revision = "00c29f56e2386353d58c599509e8dc3801b0d716"
-
-[[projects]]
-  branch = "master"
-  name = "github.com/vchrisr/vMiauw"
-  packages = ["config"]
-  revision = "b27e3564e9b90d0c8f5565db4c7dd9a6cc31efa7"
-
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "a11b288788b70db52ee5749fcbd292ffb0a4c934a36ceddfbfada5093fc3273a"
+  inputs-digest = "9f2ff4af4f38c466297eb5c258a8ec9d28409a8cea92f61cb7562f91eaa3448a"
   solver-name = "gps-cdcl"
   solver-version = 1
